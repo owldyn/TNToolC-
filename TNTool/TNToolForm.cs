@@ -34,6 +34,7 @@ namespace TNTool {
 							return;
 						}
 					}
+					input = input.Replace("|", "\r\n");
 					string outputText = toSingle(input);
 					outputText = sortNumbers(outputText);
 					outputBox.Text = outputText;

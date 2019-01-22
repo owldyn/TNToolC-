@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("TNTool")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Level 3 Communications")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("TNTool")]
-[assembly: AssemblyCopyright("Copyright © Level 3 Communications 2018")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
