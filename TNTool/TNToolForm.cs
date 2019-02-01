@@ -30,7 +30,7 @@ namespace TNTool {
 							input = portoutSingles(input);
 						}
 						catch (Exception except) {
-							outputBox.Text = except.ToString();
+							outputBox.Text = except.Message;
 							return;
 						}
 					}
