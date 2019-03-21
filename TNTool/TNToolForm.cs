@@ -261,18 +261,25 @@ namespace TNTool {
 		//START TELCOVE
 		private List<HistoryClass> telcoveHistory = new List<HistoryClass>();
 		private void telcoveButton_Click(object sender, EventArgs e) {
-			telcoveSwitchOutput.Text = ("");
-			telcoveRemedyOutput.Text = ("");
-			if (!telcoveInput.Text.Equals("")) {
-				TelcoveToolClass Remedy = new TelcoveToolClass(telcoveInput.Text, 250, "\" OR 'TELEPHONE NUMBER (DN)' = \"", false);
-				TelcoveToolClass Switch = new TelcoveToolClass(telcoveInput.Text, 7, "|", true);
-				string tmpRemedy = Remedy.get().Replace("\r\n", "\"\r\n'TELEPHONE NUMBER (DN)' = \"");
-				telcoveRemedyOutput.Text = ("'TELEPHONE NUMBER (DN)' = \"" + tmpRemedy + "\"");
-				telcoveSwitchOutput.Text = Switch.get();
-				newTelcoveHistory(telcoveInput.Text, telcoveSwitchOutput.Text, telcoveRemedyOutput.Text);
-			}
-			else {
-				telcoveSwitchOutput.Text = "Please input TNs into input box";
+			try
+			{
+				telcoveSwitchOutput.Text = ("");
+				telcoveRemedyOutput.Text = ("");
+				if (!telcoveInput.Text.Equals(""))
+				{
+					TelcoveToolClass Remedy = new TelcoveToolClass(telcoveInput.Text, 250, "\" OR 'TELEPHONE NUMBER (DN)' = \"", false);
+					TelcoveToolClass Switch = new TelcoveToolClass(telcoveInput.Text, 7, "|", true);
+					string tmpRemedy = Remedy.get().Replace("\r\n", "\"\r\n'TELEPHONE NUMBER (DN)' = \"");
+					telcoveRemedyOutput.Text = ("'TELEPHONE NUMBER (DN)' = \"" + tmpRemedy + "\"");
+					telcoveSwitchOutput.Text = Switch.get();
+					newTelcoveHistory(telcoveInput.Text, telcoveSwitchOutput.Text, telcoveRemedyOutput.Text);
+				}
+				else
+				{
+					telcoveSwitchOutput.Text = "Please input TNs into input box";
+				}
+			}catch (Exception ex){
+				telcoveSwitchOutput.Text = ex.Message;
 			}
 		}
 		private void newTelcoveHistory(string input, string switchOutput, string remedyOutput) {
