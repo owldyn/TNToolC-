@@ -143,6 +143,7 @@ namespace TNTool {
 
 
 		public static String sortNumbers(String input) {
+			/*
 			StringBuilder output = new StringBuilder();
 			List<long> inputArray = stringToArray(input);
 			List<string> inputStringArray = stringToStringArray(input);
@@ -176,6 +177,14 @@ namespace TNTool {
 				}
 			}
 			return output.ToString();
+			*/
+			LeadingZeroes numberList = new LeadingZeroes();
+			numberList.AddList(stringToStringArray(input));
+			numberList.Sort();
+			string output = numberList.GetStringList();
+			return output;
+
+
 		}
 
 
@@ -312,6 +321,78 @@ namespace TNTool {
 
 	}
 
+	public class LeadingZeroes {
+		private List<long> numbers = new List<long>();
+		private List<int> zeroes = new List<int>();
+
+		public void AddSingle(long number, int zero) {
+			numbers.Add(number);
+			zeroes.Add(zero);
+		}
+
+		public void AddList(List<string> input) {
+			numbers = SharedFunctions.stringToArray(SharedFunctions.arrayToString(input));
+			for (int i = 0; i < input.Count; i++) {
+				String number = input[i].ToString();
+				Boolean isZero = true;
+				int leadingZeros = 0;
+				while (isZero) {
+					if (number.ElementAt(leadingZeros) == '0') {
+						leadingZeros++;
+					} else {
+						isZero = false;
+					}
+				}
+				zeroes.Insert(i, leadingZeros);
+			}
+			//
+		}
+
+
+		public void Sort() {
+			List<long> tempNumbers = new List<long>();
+			List<int> tempZeroes = new List<int>();
+			tempNumbers.Add(numbers[0]);
+			tempZeroes.Add(zeroes[0]);
+
+			for (int i = 1; i < numbers.Count();i++) {
+				int position = tempNumbers.BinarySearch(numbers[i]);
+				if (position < 0) {
+					tempNumbers.Insert(~position, numbers[i]);
+					tempZeroes.Insert(~position, zeroes[i]);
+				} else {
+					tempNumbers.Insert(position, numbers[i]);
+					tempZeroes.Insert(position, zeroes[i]);
+				}
+			}
+			numbers = tempNumbers;
+			zeroes = tempZeroes;
+		}
+
+		public List<Object> Get() {
+			List<Object> output = new List<Object> {
+				numbers,
+				zeroes
+			};
+			return output;
+		}
+
+		public string GetStringList() {
+			StringBuilder output = new StringBuilder();
+			for (int i = 0; i < numbers.Count(); i++) {
+				if (zeroes[i] > 0) {
+					for (int j = 0; j < zeroes[i]; j++) {
+						output.Append("0");
+					}
+				}
+				output.Append(numbers[i]);
+				if (i != (numbers.Count() - 1)) {
+					output.Append("\r\n");
+				}
+			}
+			return output.ToString();
+		}
+	}
 
 
 	public static class StringExtensionMethods {
