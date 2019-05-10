@@ -356,7 +356,7 @@ namespace TNTool {
 				}
 				newEssHistory(essInput.Text, essOutput.Text, essBeforeBox.Text, essAfterBox.Text, selected);
 			} catch (Exception except) {
-				outputBox.Text = except.Message;
+				essOutput.Text = except.Message;
 			}
 		}
 
