@@ -305,7 +305,98 @@ namespace TNTool {
 			telcoveSwitchOutput.Text = hist[1].ToString();
 			telcoveRemedyOutput.Text = hist[2].ToString();
 		}
+
 		//STOP TELCOVE
+
+		//START 5eTools
+		private void essPSetTriggers_CheckedChanged(object sender, EventArgs e) {
+			essLockBABoxes();
+			essSetBABoxes("FORM=1v6&CHG,TN=", ",NONCONDTRIG=Y,CHG!");
+		}
+
+		private void essPSuspend_CheckedChanged(object sender, EventArgs e) {
+			essLockBABoxes();
+			essSetBABoxes("FORM=1v6&CHG,TN=", ",LCC=SUS,SUST=Y,CHG!");
+		}
+
+		private void essPDelete_CheckedChanged(object sender, EventArgs e) {
+			essLockBABoxes();
+			essSetBABoxes("FORM=1v6&OUT,TN=", ",OUT!");
+		}
+
+		private void essLockBABoxes() {
+			essBeforeBox.ReadOnly = true;
+			essAfterBox.ReadOnly = true;
+		}
+
+		private void essSetBABoxes(string before, string after) {
+			essBeforeBox.Text = before;
+			essAfterBox.Text = after;
+		}
+
+		private void essCustom_CheckedChanged(object sender, EventArgs e) {
+			essBeforeBox.ReadOnly = false;
+			essAfterBox.ReadOnly = false;
+			essSetBABoxes("", "");
+		}
+
+		private void essConvert_Click(object sender, EventArgs e) {
+			string converted = _5essClass.addBeforeAndAfter(essBeforeBox.Text, essAfterBox.Text, essInput.Text);
+			essOutput.Text = converted;
+			int selected = -1;
+			if (essPSetTriggers.Checked) {
+				selected = 0;
+			} else if (essPSuspend.Checked) {
+				selected = 1;
+			} else if (essPDelete.Checked) {
+				selected = 2;
+			} else if (essCustom.Checked) {
+				selected = 3;
+			}
+			newEssHistory(essInput.Text, essOutput.Text, essBeforeBox.Text, essAfterBox.Text, selected);
+		}
+
+		private List<HistoryClass> essHistory = new List<HistoryClass>();
+		private void newEssHistory(string input, string output, string before, string after, int selectedOption) {
+			string date = DateTime.Now.ToString();
+			string historyString = date;
+			Boolean exists = false;
+			foreach (string item in essHistoryBox.Items) {
+				if (item.ToString().Equals(historyString)) {
+					exists = true;
+					break;
+				}
+			}
+			if (!exists) {
+				essHistory.Add(new HistoryClass(input, output, before, after, selectedOption));
+				essHistoryBox.Items.Add(historyString);
+				essHistoryBox.SelectedItem = (historyString);
+			}
+		}
+
+		private void essHistoryBox_SelectedIndexChanged(object sender, EventArgs e) {
+			int index = essHistoryBox.SelectedIndex;
+			List<Object> hist = essHistory[index].get();
+			essInput.Text = hist[0].ToString();
+			essOutput.Text = hist[1].ToString();
+			switch (hist[4]) {// We have to set the selection first incase custom is selected so it doesn't overwrite what we set
+				case 0:
+					essPSetTriggers.Checked = true;
+					break;
+				case 1:
+					essPSuspend.Checked = true;
+					break;
+				case 2:
+					essPDelete.Checked = true;
+					break;
+				case 3:
+					essCustom.Checked = true;
+					break;
+			}
+			essBeforeBox.Text = hist[2].ToString();
+			essAfterBox.Text = hist[3].ToString();
+		}
+		//STOP 5ess tools
 	}
 }
 

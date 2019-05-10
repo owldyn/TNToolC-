@@ -81,11 +81,28 @@
 			this.telcoveButton = new System.Windows.Forms.Button();
 			this.label12 = new System.Windows.Forms.Label();
 			this.telcoveInput = new System.Windows.Forms.TextBox();
+			this.essTools = new System.Windows.Forms.TabPage();
+			this.essPDelete = new System.Windows.Forms.RadioButton();
+			this.label23 = new System.Windows.Forms.Label();
+			this.essHistoryBox = new System.Windows.Forms.ComboBox();
+			this.label22 = new System.Windows.Forms.Label();
+			this.essOutput = new System.Windows.Forms.TextBox();
+			this.essCustom = new System.Windows.Forms.RadioButton();
+			this.essPSetTriggers = new System.Windows.Forms.RadioButton();
+			this.essPSuspend = new System.Windows.Forms.RadioButton();
+			this.label21 = new System.Windows.Forms.Label();
+			this.essAfterBox = new System.Windows.Forms.TextBox();
+			this.label20 = new System.Windows.Forms.Label();
+			this.essBeforeBox = new System.Windows.Forms.TextBox();
+			this.essConvert = new System.Windows.Forms.Button();
+			this.label19 = new System.Windows.Forms.Label();
+			this.essInput = new System.Windows.Forms.TextBox();
 			this.tabControl1.SuspendLayout();
 			this.sortPage.SuspendLayout();
 			this.comparePage.SuspendLayout();
 			this.splitPage.SuspendLayout();
 			this.telcoveToolsPage.SuspendLayout();
+			this.essTools.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -94,6 +111,7 @@
 			this.tabControl1.Controls.Add(this.comparePage);
 			this.tabControl1.Controls.Add(this.splitPage);
 			this.tabControl1.Controls.Add(this.telcoveToolsPage);
+			this.tabControl1.Controls.Add(this.essTools);
 			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
@@ -639,6 +657,180 @@
 			this.telcoveInput.Size = new System.Drawing.Size(225, 367);
 			this.telcoveInput.TabIndex = 8;
 			// 
+			// essTools
+			// 
+			this.essTools.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.essTools.Controls.Add(this.essPDelete);
+			this.essTools.Controls.Add(this.label23);
+			this.essTools.Controls.Add(this.essHistoryBox);
+			this.essTools.Controls.Add(this.label22);
+			this.essTools.Controls.Add(this.essOutput);
+			this.essTools.Controls.Add(this.essCustom);
+			this.essTools.Controls.Add(this.essPSetTriggers);
+			this.essTools.Controls.Add(this.essPSuspend);
+			this.essTools.Controls.Add(this.label21);
+			this.essTools.Controls.Add(this.essAfterBox);
+			this.essTools.Controls.Add(this.label20);
+			this.essTools.Controls.Add(this.essBeforeBox);
+			this.essTools.Controls.Add(this.essConvert);
+			this.essTools.Controls.Add(this.label19);
+			this.essTools.Controls.Add(this.essInput);
+			this.essTools.Location = new System.Drawing.Point(4, 22);
+			this.essTools.Name = "essTools";
+			this.essTools.Padding = new System.Windows.Forms.Padding(3);
+			this.essTools.Size = new System.Drawing.Size(486, 429);
+			this.essTools.TabIndex = 4;
+			this.essTools.Text = "5e Tools";
+			// 
+			// essPDelete
+			// 
+			this.essPDelete.AutoSize = true;
+			this.essPDelete.Location = new System.Drawing.Point(237, 69);
+			this.essPDelete.Name = "essPDelete";
+			this.essPDelete.Size = new System.Drawing.Size(88, 17);
+			this.essPDelete.TabIndex = 25;
+			this.essPDelete.Text = "POTS Delete";
+			this.essPDelete.UseVisualStyleBackColor = true;
+			this.essPDelete.CheckedChanged += new System.EventHandler(this.essPDelete_CheckedChanged);
+			// 
+			// label23
+			// 
+			this.label23.Location = new System.Drawing.Point(6, 384);
+			this.label23.Name = "label23";
+			this.label23.Size = new System.Drawing.Size(225, 18);
+			this.label23.TabIndex = 24;
+			this.label23.Text = "History";
+			this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// essHistoryBox
+			// 
+			this.essHistoryBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.essHistoryBox.FormattingEnabled = true;
+			this.essHistoryBox.Location = new System.Drawing.Point(6, 405);
+			this.essHistoryBox.Name = "essHistoryBox";
+			this.essHistoryBox.Size = new System.Drawing.Size(225, 21);
+			this.essHistoryBox.TabIndex = 23;
+			this.essHistoryBox.SelectedIndexChanged += new System.EventHandler(this.essHistoryBox_SelectedIndexChanged);
+			// 
+			// label22
+			// 
+			this.label22.Location = new System.Drawing.Point(237, 174);
+			this.label22.Name = "label22";
+			this.label22.Size = new System.Drawing.Size(241, 15);
+			this.label22.TabIndex = 22;
+			this.label22.Text = "Output";
+			this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// essOutput
+			// 
+			this.essOutput.Location = new System.Drawing.Point(239, 192);
+			this.essOutput.MaxLength = 0;
+			this.essOutput.Multiline = true;
+			this.essOutput.Name = "essOutput";
+			this.essOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+			this.essOutput.Size = new System.Drawing.Size(241, 229);
+			this.essOutput.TabIndex = 21;
+			// 
+			// essCustom
+			// 
+			this.essCustom.AutoSize = true;
+			this.essCustom.Location = new System.Drawing.Point(357, 24);
+			this.essCustom.Name = "essCustom";
+			this.essCustom.Size = new System.Drawing.Size(60, 17);
+			this.essCustom.TabIndex = 20;
+			this.essCustom.Text = "Custom";
+			this.essCustom.UseVisualStyleBackColor = true;
+			this.essCustom.CheckedChanged += new System.EventHandler(this.essCustom_CheckedChanged);
+			// 
+			// essPSetTriggers
+			// 
+			this.essPSetTriggers.AutoSize = true;
+			this.essPSetTriggers.Checked = true;
+			this.essPSetTriggers.Location = new System.Drawing.Point(237, 24);
+			this.essPSetTriggers.Name = "essPSetTriggers";
+			this.essPSetTriggers.Size = new System.Drawing.Size(114, 17);
+			this.essPSetTriggers.TabIndex = 19;
+			this.essPSetTriggers.TabStop = true;
+			this.essPSetTriggers.Text = "POTS Set Triggers";
+			this.essPSetTriggers.UseVisualStyleBackColor = true;
+			this.essPSetTriggers.CheckedChanged += new System.EventHandler(this.essPSetTriggers_CheckedChanged);
+			// 
+			// essPSuspend
+			// 
+			this.essPSuspend.AutoSize = true;
+			this.essPSuspend.Location = new System.Drawing.Point(237, 47);
+			this.essPSuspend.Name = "essPSuspend";
+			this.essPSuspend.Size = new System.Drawing.Size(99, 17);
+			this.essPSuspend.TabIndex = 18;
+			this.essPSuspend.Text = "POTS Suspend";
+			this.essPSuspend.UseVisualStyleBackColor = true;
+			this.essPSuspend.CheckedChanged += new System.EventHandler(this.essPSuspend_CheckedChanged);
+			// 
+			// label21
+			// 
+			this.label21.Location = new System.Drawing.Point(234, 128);
+			this.label21.Name = "label21";
+			this.label21.Size = new System.Drawing.Size(246, 15);
+			this.label21.TabIndex = 17;
+			this.label21.Text = "After TN";
+			this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// essAfterBox
+			// 
+			this.essAfterBox.Location = new System.Drawing.Point(237, 146);
+			this.essAfterBox.Name = "essAfterBox";
+			this.essAfterBox.ReadOnly = true;
+			this.essAfterBox.Size = new System.Drawing.Size(243, 20);
+			this.essAfterBox.TabIndex = 16;
+			this.essAfterBox.Text = ",NONCONDTRIG=Y,CHG!";
+			// 
+			// label20
+			// 
+			this.label20.Location = new System.Drawing.Point(234, 89);
+			this.label20.Name = "label20";
+			this.label20.Size = new System.Drawing.Size(246, 15);
+			this.label20.TabIndex = 15;
+			this.label20.Text = "Before TN";
+			this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// essBeforeBox
+			// 
+			this.essBeforeBox.Location = new System.Drawing.Point(237, 107);
+			this.essBeforeBox.Name = "essBeforeBox";
+			this.essBeforeBox.ReadOnly = true;
+			this.essBeforeBox.Size = new System.Drawing.Size(243, 20);
+			this.essBeforeBox.TabIndex = 14;
+			this.essBeforeBox.Text = "FORM=1v6&CHG,TN=";
+			// 
+			// essConvert
+			// 
+			this.essConvert.Location = new System.Drawing.Point(356, 47);
+			this.essConvert.Name = "essConvert";
+			this.essConvert.Size = new System.Drawing.Size(127, 39);
+			this.essConvert.TabIndex = 13;
+			this.essConvert.Text = "Convert";
+			this.essConvert.UseVisualStyleBackColor = true;
+			this.essConvert.Click += new System.EventHandler(this.essConvert_Click);
+			// 
+			// label19
+			// 
+			this.label19.Location = new System.Drawing.Point(6, 5);
+			this.label19.Name = "label19";
+			this.label19.Size = new System.Drawing.Size(225, 15);
+			this.label19.TabIndex = 11;
+			this.label19.Text = "Input";
+			this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// essInput
+			// 
+			this.essInput.Location = new System.Drawing.Point(6, 23);
+			this.essInput.MaxLength = 0;
+			this.essInput.Multiline = true;
+			this.essInput.Name = "essInput";
+			this.essInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+			this.essInput.Size = new System.Drawing.Size(225, 358);
+			this.essInput.TabIndex = 10;
+			// 
 			// TNToolForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -662,6 +854,8 @@
 			this.splitPage.PerformLayout();
 			this.telcoveToolsPage.ResumeLayout(false);
 			this.telcoveToolsPage.PerformLayout();
+			this.essTools.ResumeLayout(false);
+			this.essTools.PerformLayout();
 			this.ResumeLayout(false);
 
         }
@@ -720,6 +914,22 @@
 		private System.Windows.Forms.Label label16;
 		private System.Windows.Forms.Label label17;
 		private System.Windows.Forms.Label label18;
+		private System.Windows.Forms.TabPage essTools;
+		private System.Windows.Forms.Label label21;
+		private System.Windows.Forms.TextBox essAfterBox;
+		private System.Windows.Forms.Label label20;
+		private System.Windows.Forms.TextBox essBeforeBox;
+		private System.Windows.Forms.Button essConvert;
+		private System.Windows.Forms.Label label19;
+		private System.Windows.Forms.TextBox essInput;
+		private System.Windows.Forms.RadioButton essCustom;
+		private System.Windows.Forms.RadioButton essPSetTriggers;
+		private System.Windows.Forms.RadioButton essPSuspend;
+		private System.Windows.Forms.Label label22;
+		private System.Windows.Forms.TextBox essOutput;
+		private System.Windows.Forms.RadioButton essPDelete;
+		private System.Windows.Forms.Label label23;
+		private System.Windows.Forms.ComboBox essHistoryBox;
 	}
 }
 

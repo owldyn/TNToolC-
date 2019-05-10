@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="5essClass.cs" />
     <Compile Include="CompareClass.cs" />
     <Compile Include="HistoryClass.cs" />
     <Compile Include="RangeToSingleClass.cs" />

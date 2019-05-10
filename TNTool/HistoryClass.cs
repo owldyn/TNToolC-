@@ -70,6 +70,24 @@ namespace TNTool {
 			outputArray.Add(remedyOutput);
 		}
 		//stop Telcove History
+
+		//start 5ess History
+		public HistoryClass(string input, string output, string before, string after, int selectedOption) {
+			outputArray.Add(input);
+			outputArray.Add(output);
+			outputArray.Add(before);
+			outputArray.Add(after);
+			outputArray.Add(selectedOption);
+		}
+		public void set(string input, string output, string before, string after, int selectedOption) {
+			outputArray.Clear();
+			outputArray.Add(input);
+			outputArray.Add(output);
+			outputArray.Add(before);
+			outputArray.Add(after);
+			outputArray.Add(selectedOption);
+		}
+		//stop 5ess history
 		public List<Object> get() {
 			return outputArray;
 		}
