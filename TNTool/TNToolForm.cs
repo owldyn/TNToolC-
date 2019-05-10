@@ -341,19 +341,23 @@ namespace TNTool {
 		}
 
 		private void essConvert_Click(object sender, EventArgs e) {
-			string converted = _5essClass.addBeforeAndAfter(essBeforeBox.Text, essAfterBox.Text, essInput.Text);
-			essOutput.Text = converted;
-			int selected = -1;
-			if (essPSetTriggers.Checked) {
-				selected = 0;
-			} else if (essPSuspend.Checked) {
-				selected = 1;
-			} else if (essPDelete.Checked) {
-				selected = 2;
-			} else if (essCustom.Checked) {
-				selected = 3;
+			try {
+				string converted = _5essClass.addBeforeAndAfter(essBeforeBox.Text, essAfterBox.Text, essInput.Text);
+				essOutput.Text = converted;
+				int selected = -1;
+				if (essPSetTriggers.Checked) {
+					selected = 0;
+				} else if (essPSuspend.Checked) {
+					selected = 1;
+				} else if (essPDelete.Checked) {
+					selected = 2;
+				} else if (essCustom.Checked) {
+					selected = 3;
+				}
+				newEssHistory(essInput.Text, essOutput.Text, essBeforeBox.Text, essAfterBox.Text, selected);
+			} catch (Exception except) {
+				outputBox.Text = except.Message;
 			}
-			newEssHistory(essInput.Text, essOutput.Text, essBeforeBox.Text, essAfterBox.Text, selected);
 		}
 
 		private List<HistoryClass> essHistory = new List<HistoryClass>();
