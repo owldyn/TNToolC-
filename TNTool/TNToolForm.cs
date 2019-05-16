@@ -311,17 +311,17 @@ namespace TNTool {
 		//START 5eTools
 		private void essPSetTriggers_CheckedChanged(object sender, EventArgs e) {
 			essLockBABoxes();
-			essSetBABoxes("FORM=1v6&CHG,TN=", ",NONCONDTRIG=Y,CHG!");
+			essSetBABoxes("FORM=1v6&CHG,TN=", ",NONCONDTRIG=Y,CHG,abortform!");
 		}
 
 		private void essPSuspend_CheckedChanged(object sender, EventArgs e) {
 			essLockBABoxes();
-			essSetBABoxes("FORM=1v6&CHG,TN=", ",LCC=SUS,SUST=Y,CHG!");
+			essSetBABoxes("FORM=1v6&CHG,TN=", ",LCC=SUS,SUST=Y,CHG,abortform!");
 		}
 
 		private void essPDelete_CheckedChanged(object sender, EventArgs e) {
 			essLockBABoxes();
-			essSetBABoxes("FORM=1v6&OUT,TN=", ",OUT!");
+			essSetBABoxes("FORM=1v6&OUT,TN=", ",OUT,abortform!");
 		}
 
 		private void essLockBABoxes() {

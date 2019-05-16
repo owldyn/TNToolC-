@@ -782,7 +782,7 @@
 			this.essAfterBox.ReadOnly = true;
 			this.essAfterBox.Size = new System.Drawing.Size(243, 20);
 			this.essAfterBox.TabIndex = 16;
-			this.essAfterBox.Text = ",NONCONDTRIG=Y,CHG!";
+			this.essAfterBox.Text = ",NONCONDTRIG=Y,CHG,abortform!";
 			// 
 			// label20
 			// 
