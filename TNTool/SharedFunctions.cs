@@ -102,7 +102,7 @@ namespace TNTool {
 
 		private static string convertIfLessThanSeven(string input) {
 			string inputSingles = RangeToSingleClass.toSingle(input);
-			if (countLines(inputSingles) < 7) {
+			if (countLines(inputSingles) < 8) {
 				return inputSingles;
 			}
 			else {
