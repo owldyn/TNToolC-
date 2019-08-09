@@ -177,6 +177,19 @@ namespace TNTool {
 			compareOutputAllMatch.Text = "";
 			compareOutputNoMatch.Text = "";
 		}
+		private void compareCheckForMatch_Click(object sender, EventArgs e) {
+			try {
+				List<string> compared = CompareClass.checkForMatch(compareInput1.Text, compareInput2.Text);
+				compareOutput1.Text = compared[0];
+				compareOutput2.Text = compared[1];
+				compareOutputAllMatch.Text = compared[2];
+				compareOutputNoMatch.Text = compared[3];
+				newCompareHistory(compareInput1.Text, compareInput2.Text, compareOutput1.Text, compareOutput2.Text, compareOutputAllMatch.Text, compareOutputNoMatch.Text);
+			} catch (Exception except) {
+				compareOutput1.Text = except.Message;
+				compareOutput2.Text = except.Message;
+			}
+		}
 		//STOP COMPARE
 
 		//START SPLIT
@@ -400,6 +413,7 @@ namespace TNTool {
 			essBeforeBox.Text = hist[2].ToString();
 			essAfterBox.Text = hist[3].ToString();
 		}
+
 		//STOP 5ess tools
 	}
 }

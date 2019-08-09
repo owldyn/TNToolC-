@@ -43,6 +43,7 @@
 			this.sortSingle = new System.Windows.Forms.Button();
 			this.inputBox = new System.Windows.Forms.TextBox();
 			this.comparePage = new System.Windows.Forms.TabPage();
+			this.compareCheckForMatch = new System.Windows.Forms.Button();
 			this.label16 = new System.Windows.Forms.Label();
 			this.compareClear = new System.Windows.Forms.Button();
 			this.compareHistoryList = new System.Windows.Forms.ComboBox();
@@ -249,6 +250,7 @@
 			// comparePage
 			// 
 			this.comparePage.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.comparePage.Controls.Add(this.compareCheckForMatch);
 			this.comparePage.Controls.Add(this.label16);
 			this.comparePage.Controls.Add(this.compareClear);
 			this.comparePage.Controls.Add(this.compareHistoryList);
@@ -272,6 +274,16 @@
 			this.comparePage.TabIndex = 1;
 			this.comparePage.Text = "Compare";
 			// 
+			// compareCheckForMatch
+			// 
+			this.compareCheckForMatch.Location = new System.Drawing.Point(8, 405);
+			this.compareCheckForMatch.Name = "compareCheckForMatch";
+			this.compareCheckForMatch.Size = new System.Drawing.Size(225, 21);
+			this.compareCheckForMatch.TabIndex = 17;
+			this.compareCheckForMatch.Text = "Only check for matches";
+			this.compareCheckForMatch.UseVisualStyleBackColor = true;
+			this.compareCheckForMatch.Click += new System.EventHandler(this.compareCheckForMatch_Click);
+			// 
 			// label16
 			// 
 			this.label16.Location = new System.Drawing.Point(250, 386);
@@ -283,9 +295,9 @@
 			// 
 			// compareClear
 			// 
-			this.compareClear.Location = new System.Drawing.Point(8, 405);
+			this.compareClear.Location = new System.Drawing.Point(248, 405);
 			this.compareClear.Name = "compareClear";
-			this.compareClear.Size = new System.Drawing.Size(470, 21);
+			this.compareClear.Size = new System.Drawing.Size(230, 21);
 			this.compareClear.TabIndex = 15;
 			this.compareClear.Text = "Clear";
 			this.compareClear.UseVisualStyleBackColor = true;
@@ -930,6 +942,7 @@
 		private System.Windows.Forms.RadioButton essPDelete;
 		private System.Windows.Forms.Label label23;
 		private System.Windows.Forms.ComboBox essHistoryBox;
+		private System.Windows.Forms.Button compareCheckForMatch;
 	}
 }
 
