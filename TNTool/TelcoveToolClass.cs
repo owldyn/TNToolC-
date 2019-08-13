@@ -14,7 +14,7 @@ namespace TNTool {
 
 
 		public TelcoveToolClass(string input, int sectionSize, string between, Boolean usesRange) {
-			inputArray = stringToStringArray(sortNumbers(input));
+			inputArray = stringToStringArray(sortNumbersKeepZeroes(input));
 			sectionCount = sectionSize;
 			betweenInput = between;
 			hasRange = usesRange;

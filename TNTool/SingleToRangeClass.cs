@@ -11,7 +11,7 @@ namespace TNTool {
 			}
 			StringBuilder outputText = new StringBuilder();
 			//int lines = countLines(input);
-			input = sortNumbers(input);
+			input = sortNumbersKeepZeroes(input);
 			List<long> inputArray = stringToArray(input);
 			int lines = inputArray.Count;
 

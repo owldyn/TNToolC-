@@ -8,8 +8,8 @@ namespace TNTool {
 	class CompareClass {
 		public static List<String> compareLists(string input1, string input2) {
 			try {
-				input1 = sortNumbers(input1);
-				input2 = sortNumbers(input2);
+				input1 = sortNumbersKeepZeroes(input1);
+				input2 = sortNumbersKeepZeroes(input2);
 			} catch (Exception ex){
 				throw ex;
 			}

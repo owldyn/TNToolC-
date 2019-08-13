@@ -36,7 +36,7 @@ namespace TNTool {
 					}
 					input = input.Replace("|", "\r\n");
 					string outputText = toSingle(input);
-					outputText = sortNumbers(outputText);
+					outputText = sortNumbersKeepZeroes(outputText);
 					outputBox.Text = outputText;
 					outputBox.SelectionStart = 0;
 					outputBox.SelectionLength = 0;
@@ -53,7 +53,7 @@ namespace TNTool {
 		private void sortRange_Click(object sender, EventArgs e) {
 			if (inputBox.Text != "") {
 				try {
-					inputBox.Text = sortNumbers(inputBox.Text);
+					inputBox.Text = sortNumbersKeepZeroes(inputBox.Text);
 					string input = inputBox.Text;
 					string outputText = toRange(input);
 

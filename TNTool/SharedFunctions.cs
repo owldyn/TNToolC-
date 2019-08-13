@@ -142,49 +142,12 @@ namespace TNTool {
 
 
 
-		public static String sortNumbers(String input) {
-			/*
-			StringBuilder output = new StringBuilder();
-			List<long> inputArray = stringToArray(input);
-			List<string> inputStringArray = stringToStringArray(input);
-			List<int> leadingZerosArray = new List<int>();
-			int lines = inputArray.Count;
-			for (int i = 0; i < inputStringArray.Count; i++) {
-				String number = inputStringArray[i];
-				Boolean isZero = true;
-				int leadingZeros = 0;
-				while (isZero) {
-					if (number.ElementAt(leadingZeros) == '0') {
-						leadingZeros++;
-					}
-					else {
-						isZero = false;
-					}
-				}
-				leadingZerosArray.Insert(i, leadingZeros);
-			}
-			inputArray.Sort();
-
-			for (int i = 0; i < lines; i++) {
-				if (leadingZerosArray[i] > 0) {
-					for (int j = 0; j < leadingZerosArray[i]; j++) {
-						output.Append("0");
-					}
-				}
-				output.Append(inputArray[i]);
-				if (i != (lines - 1)) {
-					output.Append("\r\n");
-				}
-			}
-			return output.ToString();
-			*/
+		public static String sortNumbersKeepZeroes(String input) {
 			LeadingZeroes numberList = new LeadingZeroes();
 			numberList.AddList(stringToStringArray(input));
 			numberList.Sort();
 			string output = numberList.GetStringList();
 			return output;
-
-
 		}
 
 
