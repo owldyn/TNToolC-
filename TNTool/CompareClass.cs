@@ -64,14 +64,17 @@ namespace TNTool {
 			}
 		}
 		public static List<String> checkForMatch(string input1, string input2) {
+			List<long> inputArray1 = null;
+			List<long> inputArray2 = null;
 			try {
-				input1 = sortNumbers(input1);
-				input2 = sortNumbers(input2);
+				inputArray1 = stringToArray(input1);
+				inputArray2 = stringToArray(input2);
+				inputArray1.Sort();
+				inputArray2.Sort();
 			} catch (Exception ex) {
 				throw ex;
 			}
-			List<long> inputArray1 = stringToArray(input1);
-			List<long> inputArray2 = stringToArray(input2);
+
 			List<String> output = new List<String>();     //First string in array (0) will be what isn't in input1, second (1) will be what isn't in input2, third (2) will be all numbers that match, fourth (3) will be what doesn't match.
 			List<StringBuilder> builder = new List<StringBuilder>();
 			for (int i = 0; i < 4; i++) {
