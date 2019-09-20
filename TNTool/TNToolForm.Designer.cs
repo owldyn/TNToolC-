@@ -31,12 +31,14 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TNToolForm));
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.sortPage = new System.Windows.Forms.TabPage();
+			this.sortRangeSortInputCheckBox = new System.Windows.Forms.CheckBox();
 			this.label15 = new System.Windows.Forms.Label();
 			this.sortClear = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.labelCount = new System.Windows.Forms.Label();
 			this.sortHistoryList = new System.Windows.Forms.ComboBox();
+			this.portoutFormatCheckBox = new System.Windows.Forms.CheckBox();
 			this.sortRange = new System.Windows.Forms.Button();
 			this.outputBox = new System.Windows.Forms.TextBox();
 			this.sortSingle = new System.Windows.Forms.Button();
@@ -97,8 +99,6 @@
 			this.essConvert = new System.Windows.Forms.Button();
 			this.label19 = new System.Windows.Forms.Label();
 			this.essInput = new System.Windows.Forms.TextBox();
-			this.portoutFormatCheckBox = new System.Windows.Forms.CheckBox();
-			this.sortRangeSortInputCheckBox = new System.Windows.Forms.CheckBox();
 			this.tabControl1.SuspendLayout();
 			this.sortPage.SuspendLayout();
 			this.comparePage.SuspendLayout();
@@ -142,6 +142,18 @@
 			this.sortPage.Size = new System.Drawing.Size(486, 429);
 			this.sortPage.TabIndex = 0;
 			this.sortPage.Text = "Sort";
+			// 
+			// sortRangeSortInputCheckBox
+			// 
+			this.sortRangeSortInputCheckBox.Checked = true;
+			this.sortRangeSortInputCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.sortRangeSortInputCheckBox.Location = new System.Drawing.Point(397, 185);
+			this.sortRangeSortInputCheckBox.Name = "sortRangeSortInputCheckBox";
+			this.sortRangeSortInputCheckBox.Size = new System.Drawing.Size(77, 20);
+			this.sortRangeSortInputCheckBox.TabIndex = 11;
+			this.sortRangeSortInputCheckBox.Text = "Sort Input";
+			this.sortRangeSortInputCheckBox.UseVisualStyleBackColor = true;
+			this.sortRangeSortInputCheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
 			// 
 			// label15
 			// 
@@ -199,6 +211,15 @@
 			this.sortHistoryList.Size = new System.Drawing.Size(480, 21);
 			this.sortHistoryList.TabIndex = 5;
 			this.sortHistoryList.SelectedIndexChanged += new System.EventHandler(this.sortHistoryList_SelectedIndexChanged);
+			// 
+			// portoutFormatCheckBox
+			// 
+			this.portoutFormatCheckBox.Location = new System.Drawing.Point(397, 345);
+			this.portoutFormatCheckBox.Name = "portoutFormatCheckBox";
+			this.portoutFormatCheckBox.Size = new System.Drawing.Size(81, 40);
+			this.portoutFormatCheckBox.TabIndex = 4;
+			this.portoutFormatCheckBox.Text = "Portout Format";
+			this.portoutFormatCheckBox.UseVisualStyleBackColor = true;
 			// 
 			// sortRange
 			// 
@@ -692,9 +713,9 @@
 			this.essPDelete.AutoSize = true;
 			this.essPDelete.Location = new System.Drawing.Point(237, 69);
 			this.essPDelete.Name = "essPDelete";
-			this.essPDelete.Size = new System.Drawing.Size(88, 17);
+			this.essPDelete.Size = new System.Drawing.Size(56, 17);
 			this.essPDelete.TabIndex = 25;
-			this.essPDelete.Text = "POTS Delete";
+			this.essPDelete.Text = "Delete";
 			this.essPDelete.UseVisualStyleBackColor = true;
 			this.essPDelete.CheckedChanged += new System.EventHandler(this.essPDelete_CheckedChanged);
 			// 
@@ -753,10 +774,10 @@
 			this.essPSetTriggers.Checked = true;
 			this.essPSetTriggers.Location = new System.Drawing.Point(237, 24);
 			this.essPSetTriggers.Name = "essPSetTriggers";
-			this.essPSetTriggers.Size = new System.Drawing.Size(114, 17);
+			this.essPSetTriggers.Size = new System.Drawing.Size(82, 17);
 			this.essPSetTriggers.TabIndex = 19;
 			this.essPSetTriggers.TabStop = true;
-			this.essPSetTriggers.Text = "POTS Set Triggers";
+			this.essPSetTriggers.Text = "Set Triggers";
 			this.essPSetTriggers.UseVisualStyleBackColor = true;
 			this.essPSetTriggers.CheckedChanged += new System.EventHandler(this.essPSetTriggers_CheckedChanged);
 			// 
@@ -765,9 +786,9 @@
 			this.essPSuspend.AutoSize = true;
 			this.essPSuspend.Location = new System.Drawing.Point(237, 47);
 			this.essPSuspend.Name = "essPSuspend";
-			this.essPSuspend.Size = new System.Drawing.Size(99, 17);
+			this.essPSuspend.Size = new System.Drawing.Size(67, 17);
 			this.essPSuspend.TabIndex = 18;
-			this.essPSuspend.Text = "POTS Suspend";
+			this.essPSuspend.Text = "Suspend";
 			this.essPSuspend.UseVisualStyleBackColor = true;
 			this.essPSuspend.CheckedChanged += new System.EventHandler(this.essPSuspend_CheckedChanged);
 			// 
@@ -835,27 +856,6 @@
 			this.essInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.essInput.Size = new System.Drawing.Size(225, 358);
 			this.essInput.TabIndex = 10;
-			// 
-			// portoutFormatCheckBox
-			// 
-			this.portoutFormatCheckBox.Location = new System.Drawing.Point(397, 345);
-			this.portoutFormatCheckBox.Name = "portoutFormatCheckBox";
-			this.portoutFormatCheckBox.Size = new System.Drawing.Size(81, 40);
-			this.portoutFormatCheckBox.TabIndex = 4;
-			this.portoutFormatCheckBox.Text = "Portout Format";
-			this.portoutFormatCheckBox.UseVisualStyleBackColor = true;
-			// 
-			// sortRangeSortInputCheckBox
-			// 
-			this.sortRangeSortInputCheckBox.Checked = true;
-			this.sortRangeSortInputCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.sortRangeSortInputCheckBox.Location = new System.Drawing.Point(397, 185);
-			this.sortRangeSortInputCheckBox.Name = "sortRangeSortInputCheckBox";
-			this.sortRangeSortInputCheckBox.Size = new System.Drawing.Size(77, 20);
-			this.sortRangeSortInputCheckBox.TabIndex = 11;
-			this.sortRangeSortInputCheckBox.Text = "Sort Input";
-			this.sortRangeSortInputCheckBox.UseVisualStyleBackColor = true;
-			this.sortRangeSortInputCheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
 			// 
 			// TNToolForm
 			// 
