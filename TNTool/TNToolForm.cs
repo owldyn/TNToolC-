@@ -213,9 +213,9 @@ namespace TNTool {
 					for (int i = 0; i < splitArray[splitCount].size(); i++) {
 						splitSplitList.Items.Add((i + 1).ToString());
 					}
-					splitSplitList.SelectedIndex = 0;
 					//splitOutput.Text = (splitArray[splitCount].get(0));
 					newSplitHistory(splitInput.Text, splitOutput.Text, splitAmount, splitSplitList.Items.Count);
+					splitSplitList.SelectedIndex = 0;
 				}
 				catch (Exception ex) {
 					splitOutput.Text = ex.Message;
@@ -229,7 +229,7 @@ namespace TNTool {
 
 		private void splitSplitList_SelectedIndexChanged(object sender, EventArgs e) {
 			if (splitSplitList.SelectedIndex >= 0) {
-				splitOutput.Text = (splitArray[splitCount].get(splitSplitList.SelectedIndex));
+				splitOutput.Text = (splitArray[splitHistoryList.SelectedIndex].get(splitSplitList.SelectedIndex));
 			}
 		}
 
@@ -266,7 +266,7 @@ namespace TNTool {
 			for (int i = 0;  i < (int)hist[3]; i++) {
 				splitSplitList.Items.Add((i + 1).ToString());
 			}
-			//splitSplitList.SelectedIndex = 0;
+			splitSplitList.SelectedIndex = 0;
 		}
 
 
