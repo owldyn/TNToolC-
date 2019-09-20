@@ -53,8 +53,10 @@ namespace TNTool {
 		private void sortRange_Click(object sender, EventArgs e) {
 			if (inputBox.Text != "") {
 				try {
-					inputBox.Text = sortNumbersKeepZeroes(inputBox.Text);
-					string input = inputBox.Text;
+					string input = sortNumbersKeepZeroes(inputBox.Text);
+					if (sortRangeSortInputCheckBox.Checked) {
+						inputBox.Text = input;
+					}
 					string outputText = toRange(input);
 
 					if (portoutFormatCheckBox.Checked == true) {
@@ -412,6 +414,10 @@ namespace TNTool {
 			}
 			essBeforeBox.Text = hist[2].ToString();
 			essAfterBox.Text = hist[3].ToString();
+		}
+
+		private void checkBox1_CheckedChanged(object sender, EventArgs e) {
+
 		}
 
 		//STOP 5ess tools

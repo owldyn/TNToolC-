@@ -37,7 +37,6 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.labelCount = new System.Windows.Forms.Label();
 			this.sortHistoryList = new System.Windows.Forms.ComboBox();
-			this.portoutFormatCheckBox = new System.Windows.Forms.CheckBox();
 			this.sortRange = new System.Windows.Forms.Button();
 			this.outputBox = new System.Windows.Forms.TextBox();
 			this.sortSingle = new System.Windows.Forms.Button();
@@ -98,6 +97,8 @@
 			this.essConvert = new System.Windows.Forms.Button();
 			this.label19 = new System.Windows.Forms.Label();
 			this.essInput = new System.Windows.Forms.TextBox();
+			this.portoutFormatCheckBox = new System.Windows.Forms.CheckBox();
+			this.sortRangeSortInputCheckBox = new System.Windows.Forms.CheckBox();
 			this.tabControl1.SuspendLayout();
 			this.sortPage.SuspendLayout();
 			this.comparePage.SuspendLayout();
@@ -123,6 +124,7 @@
 			// sortPage
 			// 
 			this.sortPage.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.sortPage.Controls.Add(this.sortRangeSortInputCheckBox);
 			this.sortPage.Controls.Add(this.label15);
 			this.sortPage.Controls.Add(this.sortClear);
 			this.sortPage.Controls.Add(this.label3);
@@ -152,7 +154,7 @@
 			// 
 			// sortClear
 			// 
-			this.sortClear.Location = new System.Drawing.Point(394, 185);
+			this.sortClear.Location = new System.Drawing.Point(394, 211);
 			this.sortClear.Name = "sortClear";
 			this.sortClear.Size = new System.Drawing.Size(84, 75);
 			this.sortClear.TabIndex = 9;
@@ -180,7 +182,7 @@
 			// 
 			// labelCount
 			// 
-			this.labelCount.Location = new System.Drawing.Point(394, 263);
+			this.labelCount.Location = new System.Drawing.Point(394, 289);
 			this.labelCount.Name = "labelCount";
 			this.labelCount.Size = new System.Drawing.Size(84, 53);
 			this.labelCount.TabIndex = 6;
@@ -197,15 +199,6 @@
 			this.sortHistoryList.Size = new System.Drawing.Size(480, 21);
 			this.sortHistoryList.TabIndex = 5;
 			this.sortHistoryList.SelectedIndexChanged += new System.EventHandler(this.sortHistoryList_SelectedIndexChanged);
-			// 
-			// portoutFormatCheckBox
-			// 
-			this.portoutFormatCheckBox.Location = new System.Drawing.Point(397, 345);
-			this.portoutFormatCheckBox.Name = "portoutFormatCheckBox";
-			this.portoutFormatCheckBox.Size = new System.Drawing.Size(81, 40);
-			this.portoutFormatCheckBox.TabIndex = 4;
-			this.portoutFormatCheckBox.Text = "Portout Format";
-			this.portoutFormatCheckBox.UseVisualStyleBackColor = true;
 			// 
 			// sortRange
 			// 
@@ -843,6 +836,27 @@
 			this.essInput.Size = new System.Drawing.Size(225, 358);
 			this.essInput.TabIndex = 10;
 			// 
+			// portoutFormatCheckBox
+			// 
+			this.portoutFormatCheckBox.Location = new System.Drawing.Point(397, 345);
+			this.portoutFormatCheckBox.Name = "portoutFormatCheckBox";
+			this.portoutFormatCheckBox.Size = new System.Drawing.Size(81, 40);
+			this.portoutFormatCheckBox.TabIndex = 4;
+			this.portoutFormatCheckBox.Text = "Portout Format";
+			this.portoutFormatCheckBox.UseVisualStyleBackColor = true;
+			// 
+			// sortRangeSortInputCheckBox
+			// 
+			this.sortRangeSortInputCheckBox.Checked = true;
+			this.sortRangeSortInputCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.sortRangeSortInputCheckBox.Location = new System.Drawing.Point(397, 185);
+			this.sortRangeSortInputCheckBox.Name = "sortRangeSortInputCheckBox";
+			this.sortRangeSortInputCheckBox.Size = new System.Drawing.Size(77, 20);
+			this.sortRangeSortInputCheckBox.TabIndex = 11;
+			this.sortRangeSortInputCheckBox.Text = "Sort Input";
+			this.sortRangeSortInputCheckBox.UseVisualStyleBackColor = true;
+			this.sortRangeSortInputCheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+			// 
 			// TNToolForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -885,7 +899,6 @@
 		private System.Windows.Forms.Button sortRange;
 		private System.Windows.Forms.Label labelCount;
 		private System.Windows.Forms.ComboBox sortHistoryList;
-		private System.Windows.Forms.CheckBox portoutFormatCheckBox;
 		private System.Windows.Forms.Button sortClear;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
@@ -943,6 +956,8 @@
 		private System.Windows.Forms.Label label23;
 		private System.Windows.Forms.ComboBox essHistoryBox;
 		private System.Windows.Forms.Button compareCheckForMatch;
+		private System.Windows.Forms.CheckBox sortRangeSortInputCheckBox;
+		private System.Windows.Forms.CheckBox portoutFormatCheckBox;
 	}
 }
 
