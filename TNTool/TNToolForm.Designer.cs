@@ -99,6 +99,7 @@
 			this.essConvert = new System.Windows.Forms.Button();
 			this.label19 = new System.Windows.Forms.Label();
 			this.essInput = new System.Windows.Forms.TextBox();
+			this.essClearButton = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.sortPage.SuspendLayout();
 			this.comparePage.SuspendLayout();
@@ -686,6 +687,7 @@
 			// essTools
 			// 
 			this.essTools.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.essTools.Controls.Add(this.essClearButton);
 			this.essTools.Controls.Add(this.essPDelete);
 			this.essTools.Controls.Add(this.label23);
 			this.essTools.Controls.Add(this.essHistoryBox);
@@ -830,9 +832,9 @@
 			// 
 			// essConvert
 			// 
-			this.essConvert.Location = new System.Drawing.Point(356, 47);
+			this.essConvert.Location = new System.Drawing.Point(320, 47);
 			this.essConvert.Name = "essConvert";
-			this.essConvert.Size = new System.Drawing.Size(127, 39);
+			this.essConvert.Size = new System.Drawing.Size(97, 39);
 			this.essConvert.TabIndex = 13;
 			this.essConvert.Text = "Convert";
 			this.essConvert.UseVisualStyleBackColor = true;
@@ -856,6 +858,16 @@
 			this.essInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.essInput.Size = new System.Drawing.Size(225, 358);
 			this.essInput.TabIndex = 10;
+			// 
+			// essClearButton
+			// 
+			this.essClearButton.Location = new System.Drawing.Point(423, 47);
+			this.essClearButton.Name = "essClearButton";
+			this.essClearButton.Size = new System.Drawing.Size(57, 39);
+			this.essClearButton.TabIndex = 26;
+			this.essClearButton.Text = "Clear";
+			this.essClearButton.UseVisualStyleBackColor = true;
+			this.essClearButton.Click += new System.EventHandler(this.essClearButton_Click);
 			// 
 			// TNToolForm
 			// 
@@ -958,6 +970,7 @@
 		private System.Windows.Forms.Button compareCheckForMatch;
 		private System.Windows.Forms.CheckBox sortRangeSortInputCheckBox;
 		private System.Windows.Forms.CheckBox portoutFormatCheckBox;
+		private System.Windows.Forms.Button essClearButton;
 	}
 }
 

@@ -420,6 +420,11 @@ namespace TNTool {
 
 		}
 
+		private void essClearButton_Click(object sender, EventArgs e) {
+			essInput.Text = "";
+			essOutput.Text = "";
+		}
+
 		//STOP 5ess tools
 	}
 }
