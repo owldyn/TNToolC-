@@ -282,8 +282,10 @@ namespace TNTool {
 				telcoveRemedyOutput.Text = ("");
 				if (!telcoveInput.Text.Equals(""))
 				{
-					TelcoveToolClass Remedy = new TelcoveToolClass(telcoveInput.Text, 250, "\" OR 'TELEPHONE NUMBER (DN)' = \"", false);
-					TelcoveToolClass Switch = new TelcoveToolClass(telcoveInput.Text, 7, "|", true);
+					string cleanedInput = telcoveInput.Text.Replace("|", "\r\n");
+					cleanedInput = toSingle(cleanedInput);
+					TelcoveToolClass Remedy = new TelcoveToolClass(cleanedInput, 250, "\" OR 'TELEPHONE NUMBER (DN)' = \"", false);
+					TelcoveToolClass Switch = new TelcoveToolClass(cleanedInput, 7, "|", true);
 					string tmpRemedy = Remedy.get().Replace("\r\n", "\"\r\n'TELEPHONE NUMBER (DN)' = \"");
 					telcoveRemedyOutput.Text = ("'TELEPHONE NUMBER (DN)' = \"" + tmpRemedy + "\"");
 					telcoveSwitchOutput.Text = Switch.get();
